@@ -11,10 +11,15 @@ buildscript {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") 
 	}
 }
+plugins {
+	id "org.sonarqube" version "1.2"
+}
 
+apply from: 'sonar.gradle'
 apply plugin: 'java'
 apply plugin: 'eclipse'
-apply plugin: 'spring-boot' 
+apply plugin: 'spring-boot'
+apply plugin: 'jacoco'
 
 jar {
 	baseName = 'demo'
@@ -36,10 +41,10 @@ dependencies {
 }
 
 
-eclipse {
-	classpath {
-		 containers.remove('org.eclipse.jdt.launching.JRE_CONTAINER')
-		 containers 'org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8'
+sonarqube {
+	properties {
+		property "sonar.projectName", "Sonar Test "
+		property "sonar.projectKey", "com.magnetic.demo"
 	}
 }
 
