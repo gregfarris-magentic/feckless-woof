@@ -1,0 +1,9 @@
+sonarqube {
+    properties {
+        property "sonar.host.url", "http://10.10.48.216:8090/sonar"
+        property "sonar.jdbc.url", "jdbc:mysql://10.10.48.216:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true&useConfigs=maxPerformance"
+        property "sonar.jdbc.driverClassName", "com.mysql.jdbc.Driver"
+        property "sonar.jdbc.username", "sonar"
+        property "sonar.jdbc.password", "sonar"
+    }
+}
