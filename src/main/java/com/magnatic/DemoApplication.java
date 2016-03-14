@@ -8,7 +8,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 public class DemoApplication {
 
 	String one = "1";
-	public static void main(String[] args) {
+	public static void main(String[] args) throws RuntimeException{
 
 		ConfigurableApplicationContext run =
 				SpringApplication.run(DemoApplication.class, args);
